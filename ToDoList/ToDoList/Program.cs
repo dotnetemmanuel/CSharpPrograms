@@ -5,7 +5,7 @@ string option = "";
 
 
 
-while (option != "4")
+while (option != "e")
 {
     if (list != null)
     {
@@ -21,7 +21,8 @@ while (option != "4")
     Console.WriteLine("Enter 1 to add an item to the list");
     Console.WriteLine("Enter 2 to remove an item from list");
     Console.WriteLine("Enter 3 to edit an item from list");
-    Console.WriteLine("Enter 4 to exit the program\n");
+    Console.WriteLine("Enter 4 to mark a task as complete");
+    Console.WriteLine("Enter E to exit the program\n");
 
     option = Console.ReadLine();
     
@@ -31,7 +32,7 @@ while (option != "4")
     {
         Console.WriteLine("Please enter the task to add to the list");
         string task = Console.ReadLine();
-        list.Add(task);
+        list.Add("[ ] " + task);
         Console.WriteLine("The task has been added to the list\n");
     }
 
@@ -56,6 +57,15 @@ while (option != "4")
         list.Insert(taskNr, edit);
         list.RemoveAt(taskNr + 1);
         Console.WriteLine("The task has been update\n");
+    }
+
+    else if (option == "4")
+    {
+        Console.WriteLine("Please enter the index number of the task you would like to mark as completed");
+        int taskNr = Convert.ToInt32(Console.ReadLine());
+        char[] myChar = { '[', 'x', ']', ' ' };
+        list.Insert(taskNr, "[x] " +  list[taskNr].TrimStart(myChar));
+        list.RemoveAt(taskNr + 1);
     }
 
     else
