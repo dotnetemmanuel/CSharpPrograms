@@ -79,9 +79,8 @@ while (option != "6")
         list.Insert(newIndex, list[taskNr]);
         list.RemoveAt(taskNr + 1);
         Console.WriteLine("The task has been reprioritized\n");
-       
-
     }
+
     else
         Console.WriteLine("Invalid input, try again\n");
 }
