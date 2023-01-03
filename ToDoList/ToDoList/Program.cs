@@ -5,7 +5,7 @@ string option = "";
 
 
 
-while (option != "e")
+while (option != "6")
 {
     if (list != null)
     {
@@ -19,10 +19,11 @@ while (option != "e")
 
     Console.WriteLine("\nPlease choose any of the following alternatives:\n");
     Console.WriteLine("Enter 1 to add an item to the list");
-    Console.WriteLine("Enter 2 to remove an item from list");
-    Console.WriteLine("Enter 3 to edit an item from list");
+    Console.WriteLine("Enter 2 to remove an item from the list");
+    Console.WriteLine("Enter 3 to edit an item from the list");
     Console.WriteLine("Enter 4 to mark a task as complete");
-    Console.WriteLine("Enter E to exit the program\n");
+    Console.WriteLine("Enter 5 to change the priority of a task");
+    Console.WriteLine("Enter 6 to exit the program\n");
 
     option = Console.ReadLine();
     
@@ -54,9 +55,9 @@ while (option != "e")
         int taskNr = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Please enter the updated task");
         string edit = Console.ReadLine();
-        list.Insert(taskNr, edit);
+        list.Insert(taskNr, "[ ] " + edit);
         list.RemoveAt(taskNr + 1);
-        Console.WriteLine("The task has been update\n");
+        Console.WriteLine("The task has been updated\n");
     }
 
     else if (option == "4")
@@ -68,6 +69,17 @@ while (option != "e")
         list.RemoveAt(taskNr + 1);
     }
 
+    else if (option == "5")
+    {
+        Console.WriteLine("Please enter the index number of the task you would like to reprioritize");
+        int taskNr = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Please enter a new index number for your task. Index 0 has highest priority)");
+        int newIndex = Convert.ToInt32(Console.ReadLine());
+        list.Insert(newIndex, list[taskNr]);
+        list.RemoveAt(taskNr + 1);
+       
+
+    }
     else
         Console.WriteLine("Invalid input, try again\n");
 }
