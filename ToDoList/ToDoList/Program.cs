@@ -3,8 +3,6 @@ Console.WriteLine("___                                                      \r\n
 List<string> list = new List<string>();
 string option = "";
 
-
-
 while (option != "6")
 {
     if (list != null)
@@ -16,7 +14,6 @@ while (option != "6")
         }
     }
     
-
     Console.WriteLine("\nPlease choose any of the following alternatives:\n");
     Console.WriteLine("Enter 1 to add an item to the list");
     Console.WriteLine("Enter 2 to remove an item from the list");
@@ -27,8 +24,6 @@ while (option != "6")
 
     option = Console.ReadLine();
     
-    
-
     if(option == "1")
     {
         Console.WriteLine("Please enter the task to add to the list");
