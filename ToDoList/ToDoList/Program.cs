@@ -67,6 +67,7 @@ while (option != "6")
         char[] myChar = { '[', 'x', ']', ' ' };
         list.Insert(taskNr, "[x] " +  list[taskNr].TrimStart(myChar));
         list.RemoveAt(taskNr + 1);
+        Console.WriteLine("The task has been marked as completed. Congratulations!\n");
     }
 
     else if (option == "5")
@@ -77,6 +78,7 @@ while (option != "6")
         int newIndex = Convert.ToInt32(Console.ReadLine());
         list.Insert(newIndex, list[taskNr]);
         list.RemoveAt(taskNr + 1);
+        Console.WriteLine("The task has been reprioritized\n");
        
 
     }
